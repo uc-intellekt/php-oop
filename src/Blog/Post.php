@@ -2,6 +2,8 @@
 
 class Post
 {
+    private $published = false;
+
     private $heading = 'Untitled';
     
     private $content = '';
@@ -11,6 +13,16 @@ class Post
         echo 'Read the "' . $this->heading . '"';
     }
     
+    public function isPublished()
+    {
+        return $this->$published;
+    }
+    
+    public function setPuplished($published)
+    {
+        $this->$published = (bool)$published;
+    }
+    
     public function getHeading()
     {
         return $this->heading;
@@ -18,7 +30,7 @@ class Post
     
     public function setHeading($heading)
     {
-        $this->heading = $heading;
+        $this->heading = (string)$heading;
     }
     
     public function getContent()
@@ -28,6 +40,6 @@ class Post
     
     public function setContent($content)
     {
-        $this->content = $content;
+        $this->content = (string)$content;
     }
 }

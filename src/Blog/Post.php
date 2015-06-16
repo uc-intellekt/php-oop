@@ -10,7 +10,7 @@ class Post
     
     public function __construct()
     {
-        $this->published = true;
+        $this->published = false;
         $this->heading = 'Untitled';
         $this->content = '';
     }

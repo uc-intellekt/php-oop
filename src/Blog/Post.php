@@ -2,15 +2,37 @@
 
 class Post
 {
-    private $published = false;
+    private $published;
 
-    private $heading = 'Untitled';
+    private $heading;
     
-    private $content = '';
+    private $content;
+    
+    public function __construct()
+    {
+        $this->published = true;
+        $this->heading = 'Untitled';
+        $this->content = '';
+    }
+
+    public function __toString()
+    {
+        return $this->heading;
+    }
     
     public function read()
     {
         echo 'Read the "' . $this->heading . '"';
+    }
+    
+    public function publish()
+    {
+        $this->published = true;
+    }
+    
+    public function unpublish()
+    {
+        $this->published = false;
     }
     
     public function isPublished()
